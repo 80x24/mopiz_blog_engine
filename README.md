@@ -30,12 +30,12 @@ which means that whitespace is normalized to one. You won't be
 able to search for a post with more than one whitespace because
 it is truncated to one in the db. I'm not sure if this matters.
 
-Each post content must have a <p> and </p> and there can't be another
-<p> or </p> emdedded withing a <p></p>. This follows the normal rules of html.
+Each post content must have a `<p>` and `</p>` and there can't be another
+`<p>` or `</p>` emdedded within a `<p></p>`. This follows the normal rules of html.
 
 Creating the search database
 
-CREATE VIRTUAL TABLE search USING fts4(title, slug, content, date, author, tokenize=porter)
+`CREATE VIRTUAL TABLE search USING fts4(title, slug, content, date, author, tokenize=porter)`
 
 Note that the search database needs to have its integrity checked
 every once in a while.
