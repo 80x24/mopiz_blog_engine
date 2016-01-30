@@ -1,0 +1,31 @@
+{% extends "archive_template.html" %}
+{% block content %}
+		{% for post in posts %}
+			<article>
+				{# title #}
+				{% if post["title"] %}
+				<h1><a href="{{ url_for('posts', slug=post['slug']) }}">{{ post["title"] }}</a></h1>
+				{% endif %}
+				{% if post["date"] and post["author"] %}
+				<div class="info">{{ post["date"] }} By: {{ post["author"] }} {% if session.logged_in %}<a href="{{ url_for('edit', slug=post['slug']) }}">edit</a>{% endif %}</div>
+				{% elif post["date"] and not post["author"] %}
+				<div class="info">{{ post["date"] }} {% if session.logged_in %}<a href="{{ url_for('edit', slug=post['slug']) }}">edit</a>{% endif %}</div>
+				{% elif post["author"] and not post["date"] %}
+				<div class="info">By: {{ post["author"] }} {% if session.logged_in %}<a href="{{ url_for('edit', slug=post['slug']) }}">edit</a>{% endif %}</div>
+				{% endif %}
+				{% if post["image"] %}
+				<a href="{{ url_for('posts', slug=post['slug']) }}">{{ post["image"]|safe }}</a>
+				{% endif %}
+				{% if post["content"] %}
+				{{ post["content"]|safe }} <a href="{{ url_for('posts', slug=post['slug']) }}">...Read More</a>
+				{% endif %}
+			</article>
+		{% endfor %}
+			<div class="archive-link">
+				{% if archivenum == 1%}
+				<a href="{{ url_for('archive') }}">Beginning of Archive</a>
+				{% else %}
+				<a href="{{ url_for('archive', pagenum=archivenum) }}">Even Older Articles</a>
+				{% endif %}
+			</div>
+{% endblock %}

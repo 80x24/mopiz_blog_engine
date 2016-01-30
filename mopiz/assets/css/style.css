@@ -1,0 +1,369 @@
+html {
+	height:100%;
+}
+body {
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:400;
+	font-style:normal;
+	color:#333;
+	font-size:16px;
+	height:100%;
+	border-top:4px solid #007034;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+p {
+	line-height:1.4em;
+}
+a {
+	text-decoration:none;
+	color:#007034;
+}
+a:hover {
+	text-decoration:underline;
+}
+a:visited {
+	text-decoration:none;
+	color:#007034;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family:"futura-pt-1","futura-pt-2",helvetica,arial,sans-serif;
+	font-weight:700;
+	font-style:normal;
+	text-transform:uppercase;
+	color:#222;
+}
+h1 {
+	font-size:2em;
+}
+h2 {
+	font-size:1.5em;
+}
+h3 {
+	font-size:1.17em;
+}
+h4 {
+	font-size:1em;
+}
+h5 {
+	font-size:0.83em;
+}
+h6 {
+	font-size:0.67em;
+}
+h1 a {
+	color:#222;
+}
+h1 a:hover {
+	text-decoration:underline;
+}
+h1 a:visited {
+	color:#222;
+}
+hr {
+	border:0px;
+	color:#808080;
+	height:1px;
+	width:100%;
+}
+img {
+	border:none;
+	max-width:100%;
+}
+dl {
+	line-height:1.4em;
+}
+dt {
+	font-weight:bold;
+}
+#main-nav {
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:700;
+	font-style:normal;
+	text-transform:uppercase;
+	color:#444;
+	font-size:18px;
+}
+#main-header {
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:700;
+	font-style:normal;
+	text-transform:uppercase;
+	color:#444;
+}
+#logo a {
+	display:block;
+	width:200px;
+	height:50px;
+	background-image:url("/assets/images/mopiz-logo.png");
+	background-repeat:no-repeat;
+}
+#logo h1 {
+	display:none;
+}
+
+#search-box {
+	width:180px;
+	max-width:180px;
+	height:18px;
+	padding-left:5px;
+	border-top:1px solid #878787;
+	border-bottom:1px solid #878787;
+	border-left:1px solid #878787;
+	border-right:1px solid #878787;
+
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:400;
+	font-style:normal;
+	color:#333;
+	font-size:12px;
+}
+
+.footer-links {
+	text-align:center;
+}
+.info {
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:400;
+	font-style:normal;
+	text-transform:uppercase;
+	color:#444;
+	font-size:12px;
+}
+.archive-link {
+	font-family:"Roboto",helvetica,arial,sans-serif;
+	font-weight:700;
+	font-style:normal;
+	text-transform:uppercase;
+	color:#444;
+	font-size:16px;
+}
+.search-container input[type=submit] {
+	background:url("https://www.mopiz.com/assets/images/search.png");
+	width:16px;
+	height:16px;
+	border:none;
+	cursor:pointer;
+}
+.tag-results {
+	padding-bottom: 10px;
+}
+.tag-result {
+	padding-top:20px;
+	padding-bottom:10px;
+	border-bottom:2px solid #c0c0c0;
+}
+.all-tag {
+	padding-bottom:10px;
+}
+.search-result {
+	padding-top:20px;
+	padding-bottom:10px;
+}
+.unstyled-list {
+	margin:0;
+	padding:0;
+}
+.unstyled-list li {
+	list-style-type: none;
+}
+.flashes li{
+	min-width:60px;
+	min-height:20px;
+	list-style-type:none;
+	border: 1px solid black;
+	background-color: #4FC1E9;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+.error {
+	color:red;
+	margin-top:20px;
+	padding-bottom:5px;
+}
+.border {
+	border-bottom:2px solid #c0c0c0;
+}
+
+@media only screen and (min-width:720px) {
+	article {
+		/*border-bottom:1px solid #808080;*/
+		border-bottom:2px solid #c0c0c0;
+		padding-bottom:5px;
+	}
+	#main-nav {
+		width:120px;
+		float:left;
+		padding-top:20px;
+		line-height:25px;
+	}
+	#main-header {
+		/*padding-bottom:5px;*/
+		/*border-bottom:1px solid #808080;*/
+		border-bottom:2px solid #c0c0c0;
+		height:65px;
+		padding-top:15px;
+	}
+	#main-footer {
+		width:600px;
+		/*margin-left:120px;*/
+		float:right;
+		padding-top:15px;
+		padding-bottom:5px;
+	}
+	#search {
+		width:215px;
+		margin-top:-36px;
+		margin-left:510px;
+	}
+	.info {
+		/*width:220px;*/
+		height:15px;
+		margin-top:-20px;
+		padding-bottom:5px;
+	}
+	.archive-container {
+		width:600px;
+		float:right;
+		padding-bottom:10px;
+	}
+	.archive-link {
+		border-bottom:2px solid #c0c0c0;
+	}
+	.archive-link a {
+		display: inline-block;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.search-container {
+		max-width: 210px;
+		height:25px;
+	}
+	.ignoredWords {
+		width:600px;
+		margin-left:120px;
+		text-align:center;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.content {
+		width:720px;
+		margin:auto;
+	}
+	.main-content {
+		width:600px;
+		/*margin-left:120px;*/
+		float:right;
+	}
+	.flashes {
+		width: 600px;
+		margin-left:120px;
+	}
+	.error {
+		width: 600px;
+		margin-left:120px;
+	}
+	.form {
+		min-width: 400px;
+		font-family: monospace;
+	}
+	.text {
+		min-width: 600px;
+		min-height: 300px;
+	}
+}
+@media only screen and (max-width:720px) {
+	h1,h2 {
+		max-width:100%;
+	}
+	article {
+		border-bottom:2px solid #c0c0c0;
+		padding-bottom:5px;
+		padding-top:20px;
+	}
+	#main-nav {
+		max-width: 100%;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	.unstyled-list li{
+		display:inline;
+	}
+
+	#main-header {
+		max-width:100%;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	#main-footer {
+		max-width:100%;
+		padding-top:15px;
+		padding-bottom:5px;
+		padding-left:10px;
+		padding-right:10px;
+	}
+	#search {
+		padding-top:5px;
+		padding-bottom:10px;
+	}
+	.content {
+		width:100%;
+	}
+	.info {
+		height:15px;
+		margin-top:-20px;
+		padding-bottom:5px;
+	}
+	.archive-container {
+		max-width:100%;
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-bottom: 10px;
+	}
+	.archive-link {
+		border-bottom:2px solid #c0c0c0;
+	}
+	.archive-link a {
+		display: inline-block;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.ignoredWords {
+		max-width:100%;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+	.main-content {
+		max-width:100%;
+		/*margin-left:120px;*/
+		padding-left:10px;
+		padding-right:10px;
+	}
+	.flashes {
+		max-width:100%;
+	}
+	.error {
+		width:100%;
+	}
+	.form {
+		width: 100%;
+		font-family: monospace;
+	}
+	.text {
+		width:100%;
+		min-height: 200px;
+	}
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resoultion: 192dpi) {
+	#logo a {
+		display:block;
+		width:200px;
+		height:50px;
+		background:url("/assets/images/mopiz-logo-retina.png") no-repeat;
+		background-size:cover;
+	}
+}

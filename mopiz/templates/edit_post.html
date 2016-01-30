@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+{% block content %}
+		<div class="tag-result">
+			<form class="pure-form pure-form-stacked" action="{{ url_for('edit', slug=post.slug)}}" method="post">
+				<fieldset>
+					<legend style="font-weight:bold">Edit Post</legend>
+					<label for="title">Title</label>
+					<input type="text" name="title" class="form" value="{{ post.title }}" placeholder="A Really Awesome Post" autofocus>
+					<label for="slug">URL Slug</label>
+					<input type="text" name="slug" class="form" value="{{ post.slug }}"placeholder="awesome-post" readonly>
+					<label for="author">Author</label>
+					{% if post.author %}
+					<input type="text" name="author" class="form" value="{{ post.author }}">
+					{% else %}
+					<input type="text" name="author" class="form" placeholder="Bob Smith (optional)">
+					<label for="image">Image URL (relative)</label>
+					{% endif %}
+					{% if post.image %}
+					<input type="text" name="image" class="form" value="{{ post.image }}">
+					{% else %}
+					<input type="text" name="image" class="form" placeholder="<img src='/assets/images/cat.jpg' title='cats rule' alt='cat picture'>">
+					{% endif %}
+					<label for="content">Content</label>
+					{% if post.content %}
+					<textarea name="content" rows="20" cols="60">{{ post.content }}</textarea>
+					{% else %}
+					<textarea name="content" rows="20" cols="60" placeholder="Content optional. If added, each paragraph must be surrounded by <p></p> tag"></textarea>
+					{% endif %}
+					{% if tags %}
+					<label for="tags">Tags (mark to delete)</label>
+					{% for t in tags %}
+					{{ t }}<input type="checkbox" name="tag-delete" value="{{ t }}">
+					{% endfor %}
+					{% endif %}
+					<label for="tag">Tag</label>
+					<input type="text" name="tag-add" class="form" placeholder="article">
+					{% if post.visible %}
+					visible <input type="checkbox" name="visible" value="1" checked>
+					{% else %}
+					visible <input type="checkbox" name="visible">
+					{% endif %}
+					<br/>
+					<input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+					<button type="submit" class="pure-button pure-button-primary">Edit Post</button>
+				</fieldset>
+			</form>
+		</div>
+{% endblock %}

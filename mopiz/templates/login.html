@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+{% block content %}
+		<div class="tag-result">
+			<form class="pure-form pure-form-stacked" action="{{ url_for('login')}}" method="post">
+				<fieldset>
+					<legend style="font-weight:bold">Log In</legend>
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" placeholder="Username" maxlength="32" autofocus>
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" placeholder="Password" maxlength="32">
+					<input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+					<button type="submit" class="pure-button pure-button-primary">Login</button>
+				</fieldset>
+			</form>
+		</div>
+{% endblock %}

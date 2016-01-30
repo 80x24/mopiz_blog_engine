@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+{% block content %}
+		<div class="tag-result">
+			<form class="pure-form pure-form-stacked" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<legend style="font-weight:bold">Upload A File</legend>
+					<label for="file">Choose File</label>
+					<input type="file" name="file">
+					<input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+					<button type="submit" class="pure-button pure-button-primary">Upload</button>
+				</fieldset>
+			</form>
+		</div>
+{% endblock %}

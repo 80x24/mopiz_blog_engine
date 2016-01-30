@@ -1,0 +1,11 @@
+TODO
+==========
+
+Future Features
+----------------
++ Implement markdown parser (optional)
+  - I would need to generate the markdown html and then strip the tags
+    before putting it into the search table.
++ Exception Handling with SQL queries.
+  - Right now exceptions are not handled gracefully.
++ Full Test Coverage

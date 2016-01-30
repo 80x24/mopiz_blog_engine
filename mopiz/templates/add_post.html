@@ -1,0 +1,26 @@
+{% extends "template.html" %}
+{% block content %}
+		<div class="tag-result">
+			<form class="pure-form pure-form-stacked" action="{{ url_for('add') }}" method="post">
+				<fieldset>
+					<legend style="font-weight:bold">Add A Post</legend>
+					<label for="title">Title</label>
+					<input type="text" name="title" class="form" placeholder="A Really Awesome Post" autofocus>
+					<label for="slug">URL Slug</label>
+					<input type="text" name="slug" class="form" placeholder="awesome-post">
+					<label for="author">Author</label>
+					<input type="text" name="author" class="form" placeholder="Bob Smith (optional)">
+					<label for="image">Image URL (relative)</label>
+					<input type="text" name="image" class="form" placeholder="<img src='/assets/images/cat.jpg' title='cats rule' alt='cat picture'>">
+					<label for="content">Content</label>
+					<textarea name="content" class="text" placeholder="Content optional. If added, each paragraph must be surrounded by <p></p> tag"></textarea>
+					<label for="tag">Tag</label>
+					<input type="text" name="tag-add" class="form" placeholder="article">
+					visible <input type="checkbox" name="visible">
+					<br>
+					<input name="_csrf_token" type="hidden" value="{{ csrf_token() }}">
+					<button type="submit" class="pure-button pure-button-primary">Add Post</button>
+				</fieldset>
+			</form>
+		</div>
+{% endblock %}

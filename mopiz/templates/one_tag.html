@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+            <div class="border">
+                <h1>Tag: {{ tag }}</h1>
+                {% for r in results %}
+                <div class="tag-results">
+                    <h3><a href="{{ url_for('posts', slug=r.slug) }}">{{ r.title }}</a></h3>
+                </div>
+            </div>
+            {% endfor %}
+{% endblock %}

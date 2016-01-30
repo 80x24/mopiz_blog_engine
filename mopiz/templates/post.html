@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block content %}
+			<article>
+				{# title #}
+				{% if post["title"] %}
+				<h1><a href="{{ url_for('posts', slug=post['slug']) }}">{{ post["title"] }}</a></h1>
+				{% endif %}
+				<div class="info">
+					{% if post["date"] %}
+					{{ post["date"] }}
+					{% endif %}
+					{% if post["author"] %}
+					By: {{ post["author"] }}
+					{% endif %}
+					{% if tags %}
+					Tags: 
+					{% for t in tags %}
+					<a href="{{ url_for('tag', name=t) }}">{{ t }}</a>
+					{% endfor %}
+					{% endif %}
+					{% if session.logged_in %}
+					<a href="{{ url_for('edit', slug=post['slug']) }}">edit</a>
+					{% endif %}
+				</div>
+				{% if post["image"] %}
+				<a href="{{ url_for('posts', slug=post['slug']) }}">{{ post["image"]|safe }}</a>
+				{% endif %}
+				{% if post["content"] %}
+				{{ post["content"]|safe }}
+				{% endif %}
+				{% if post.visible == 0 %}
+				<span style="color:red;"><h3>Post Invisible</h3></span>
+				{% endif %}
+			</article>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{% block content %}
+            <div class="all-tag border">
+                {% if tags is none %}
+                <strong>There are no tags</strong>
+                {% else %}
+                <h2>Tags</h2>
+                <ul>
+                    {% for t in tags %}
+                    <li><a href="/tag/{{ t.name }}">{{ t.name }} ({{ t.num }})</a></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+{% endblock %}
